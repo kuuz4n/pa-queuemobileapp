@@ -46,6 +46,8 @@ public class jeep_queue extends AppCompatActivity {
 
     TextView txt1,txt2,txt3;
     Button btn1;
+    int current;
+    int yournum;
     ImageView qr;
     String assigned_number;
     CountDownTimer countDownTimer;
@@ -76,6 +78,7 @@ public class jeep_queue extends AppCompatActivity {
         });
         String current_number = getIntent().getStringExtra("CURRENT_NUMBER_KEY");
         txt3.setText(current_number);
+
     }
 
     public void startTimer()
@@ -92,6 +95,7 @@ public class jeep_queue extends AppCompatActivity {
         };
         countDownTimer.start();
     }
+
     private void restartCounting()
     {
         startTimer();

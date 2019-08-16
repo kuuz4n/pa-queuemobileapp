@@ -46,14 +46,13 @@
             android:textStyle="bold"
             android:textSize="50px"/>
     </LinearLayout>`
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-
-        <TextView
+            <TextView
             android:id="@+id/queue_terminal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,6 +60,14 @@
             android:font="@font/helvitica"
             android:textStyle="bold"
             android:textSize="100px"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
         <TextView
             android:id="@+id/queue_number"
