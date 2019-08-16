@@ -73,7 +73,6 @@
             android:id="@+id/queue_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00"
             android:font="@font/helvitica"
             android:textStyle="bold"
             android:textSize="100px"/>

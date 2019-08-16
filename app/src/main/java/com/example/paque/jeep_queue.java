@@ -1,6 +1,8 @@
 package com.example.paque;
 
+import android.app.Notification;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -18,7 +20,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.res.ResourcesCompat;
 
 import com.android.volley.AuthFailureError;
@@ -46,11 +51,10 @@ public class jeep_queue extends AppCompatActivity {
 
     TextView txt1,txt2,txt3;
     Button btn1;
-    int current;
-    int yournum;
     ImageView qr;
     String assigned_number;
     CountDownTimer countDownTimer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,8 +82,8 @@ public class jeep_queue extends AppCompatActivity {
         });
         String current_number = getIntent().getStringExtra("CURRENT_NUMBER_KEY");
         txt3.setText(current_number);
-
     }
+
 
     public void startTimer()
     {
@@ -109,6 +113,7 @@ public class jeep_queue extends AppCompatActivity {
                     public void onResponse(String response) {
                         if (response.length() != 0) {
                             txt3.setText(response);
+
                             restartCounting();
 
                         } else {
@@ -174,7 +179,7 @@ public class jeep_queue extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(jeep_queue.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(jeep_queue.this, "Insufficient Balance", Toast.LENGTH_SHORT).show();
                         Log.wtf("Error", error);
                     }
                 }) {
